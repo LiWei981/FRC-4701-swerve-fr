@@ -1,8 +1,8 @@
 package frc.robot.commands;
 
 import edu.wpi.first.math.MathUtil;
+import edu.wpi.first.wpilibj.XboxController;
 import entech.commands.EntechCommandBase;
-import entech.util.EntechJoystick;
 import frc.robot.RobotConstants;
 import frc.robot.OI.UserPolicy;
 import frc.robot.subsystems.DriveSubsystem;
@@ -11,9 +11,9 @@ public class DriveCommand extends EntechCommandBase {
     private static final double MAX_SPEED_PERCENT = 1;
 
     private final DriveSubsystem drive;
-    private final EntechJoystick joystick;
+    private final XboxController joystick;
 
-    public DriveCommand(DriveSubsystem drive, EntechJoystick joystick) {
+    public DriveCommand(DriveSubsystem drive, XboxController joystick) {
         super(drive);
         this.drive = drive;
         this.joystick = joystick;
@@ -26,9 +26,10 @@ public class DriveCommand extends EntechCommandBase {
 
     @Override
     public void execute() {
-        double xRaw = joystick.getX();
-        double yRaw = joystick.getY();
-        double rotRaw = joystick.getZ();
+        double xRaw = joystick.getLeftX();
+        double yRaw = joystick.getLeftY();
+        //Change to getRightY if the robot is up and down instead of left and right
+        double rotRaw = joystick.getRightX();
 
         double xConstrained = MathUtil.applyDeadband(MathUtil.clamp(xRaw, -MAX_SPEED_PERCENT, MAX_SPEED_PERCENT),
                 RobotConstants.Ports.CONTROLLER.JOYSTICK_AXIS_THRESHOLD);
