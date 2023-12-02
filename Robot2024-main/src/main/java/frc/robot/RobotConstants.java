@@ -128,18 +128,18 @@ public final class RobotConstants {
         }
     }
 
-    public interface OPERATOR_PANEL {
-        public static final int GRIPPER = 1;
-        public static final int PIVOT_UP = 2;
-        public static final int PIVOT_DOWN = 3;
-        public static final int AUTO = 4;
-        public static final int TELESCOPE_OUT = 5;
-        public static final int TELESCOPE_IN = 6;
-        public static final int ARM_OFF = 10;
-        public static final int ARM_LOAD = 8;
-        public static final int ARM_HIGH = 9;
-        public static final int ARM_MIDDLE = 11;
-    }
+    // public interface OPERATOR_PANEL {
+    //     public static final int GRIPPER = 1;
+    //     public static final int PIVOT_UP = 2;
+    //     public static final int PIVOT_DOWN = 3;
+    //     public static final int AUTO = 4;
+    //     public static final int TELESCOPE_OUT = 5;
+    //     public static final int TELESCOPE_IN = 6;
+    //     public static final int ARM_OFF = 10;
+    //     public static final int ARM_LOAD = 8;
+    //     public static final int ARM_HIGH = 9;
+    //     public static final int ARM_MIDDLE = 11;
+  //  }
 
     public static interface Vision {
         public static interface Cameras {
