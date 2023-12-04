@@ -14,6 +14,8 @@ public final class RobotConstants {
     public static final class DrivetrainConstants {
         // Driving Parameters - Note that these are not the maximum capable speeds of
         // the robot, rather the allowed maximum speeds
+
+        //Change these values if you need to robot to go faster, would not recommend if not needed
         public static final double MAX_SPEED_METERS_PER_SECOND = 4.0; // 4.42; //4.8;
         public static final double MAX_ANGULAR_SPEED_RADIANS_PER_SECOND = 2 * Math.PI; // radians per second
 
@@ -34,6 +36,8 @@ public final class RobotConstants {
                 new Translation2d(-WHEEL_BASE_METERS / 2, TRACK_WIDTH_METERS / 2),
                 new Translation2d(-WHEEL_BASE_METERS / 2, -TRACK_WIDTH_METERS / 2));
 
+
+        //TODO If the gyro (the one located in subsystems/driveSubSystem) is still not reversed, change this to true and test again. Started in false.
         public static final boolean kGyroReversed = false;
     }
 
