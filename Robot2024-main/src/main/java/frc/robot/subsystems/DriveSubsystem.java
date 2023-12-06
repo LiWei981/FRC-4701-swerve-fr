@@ -40,7 +40,7 @@ public class DriveSubsystem extends EntechSubsystem {
     public static final double REAR_LEFT_VIRTUAL_OFFSET_RADIANS = 5.80897935;
     public static final double REAR_RIGHT_VIRTUAL_OFFSET_RADIANS = 0.7840019;
 
-    public static final int GYRO_ORIENTATION = 0; // might be able to merge with kGyroReversed
+    public static final int GYRO_ORIENTATION = -1; // might be able to merge with kGyroReversed
 
     public static final double FIELD_LENGTH_INCHES = 54 * 12 + 1; // 54ft 1in
     public static final double FIELD_WIDTH_INCHES = 26 * 12 + 7; // 26ft 7in

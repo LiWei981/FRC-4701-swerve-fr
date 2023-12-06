@@ -29,7 +29,7 @@ public class DriveCommand extends EntechCommandBase {
         double xRaw = joystick.getLeftX();
         double yRaw = joystick.getLeftY();
         //Change to getRightY if the robot is up and down instead of left and right
-        double rotRaw = joystick.getRightX();
+        double rotRaw = -joystick.getRightX();
 
         double xConstrained = MathUtil.applyDeadband(MathUtil.clamp(xRaw, -MAX_SPEED_PERCENT, MAX_SPEED_PERCENT),
                 RobotConstants.Ports.CONTROLLER.JOYSTICK_AXIS_THRESHOLD);
