@@ -34,11 +34,13 @@ import frc.robot.swerve.SwerveUtils;
  */
 public class DriveSubsystem extends EntechSubsystem {
     private static final boolean ENABLED = true;
-
+//TODO Offsets last updated on 12/4/2023 and were correct at that time. Recalibration recommended yearly.
+//TODO Reset all values below and have the bevel facing Robot Right in order to find offset values.
     public static final double FRONT_LEFT_VIRTUAL_OFFSET_RADIANS = 2.2759093;
     public static final double FRONT_RIGHT_VIRTUAL_OFFSET_RADIANS = 1.489458748;
     public static final double REAR_LEFT_VIRTUAL_OFFSET_RADIANS = 5.80897935;
     public static final double REAR_RIGHT_VIRTUAL_OFFSET_RADIANS = 0.7840019;
+//TODO Gyro was originally 1, switched to 0 on 12/4/2023
 
     public static final int GYRO_ORIENTATION = -1; // might be able to merge with kGyroReversed
 
