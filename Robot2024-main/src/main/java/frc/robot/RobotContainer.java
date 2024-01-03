@@ -4,6 +4,13 @@
 
 package frc.robot;
 
+import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.auto.NamedCommands;
+import com.pathplanner.lib.commands.PathPlannerAuto;
+import com.pathplanner.lib.path.GoalEndState;
+import com.pathplanner.lib.path.PathConstraints;
+import com.pathplanner.lib.path.PathPlannerPath;
+
 import java.util.List;
 
 import edu.wpi.first.math.geometry.Pose2d;
@@ -41,8 +48,8 @@ public class RobotContainer {
 
     private Autonomous auto = null;
 
-    SmartDashboard.putData("Auto Chooser", this.chooser);
-    chooser.setDefaultOption("wait", new wait(15));
+   // SmartDashboard.putData("Auto Chooser", this.chooser);
+   // chooser.setDefaultOption("wait", new wait(15));
 
     private final DriveSubsystem driveSubsystem = new DriveSubsystem();
     private final VisionSubsystem visionSubsystem = new VisionSubsystem();

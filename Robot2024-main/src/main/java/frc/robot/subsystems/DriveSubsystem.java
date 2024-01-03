@@ -4,6 +4,9 @@
 
 package frc.robot.subsystems;
 
+import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.util.PathPlannerLogging;
+
 import java.util.Optional;
 
 import com.kauailabs.navx.frc.AHRS;
@@ -27,6 +30,7 @@ import frc.robot.RobotConstants;
 import frc.robot.RobotConstants.DrivetrainConstants;
 import frc.robot.swerve.SwerveModule;
 import frc.robot.swerve.SwerveUtils;
+
 
 /**
  * The {@code Drivetrain} class contains fields and methods pertaining to the
@@ -68,7 +72,14 @@ public class DriveSubsystem extends EntechSubsystem {
 
     /** Creates a new Drivetrain. */
     public DriveSubsystem() {
-
+         AutoBuilder.configureRamsete(
+            this::getPose, // Robot pose supplier
+            this::resetOdometry, // Method to reset odometry (will be called if your auto has a starting pose)
+            this::getCurrentSpeeds, // Current ChassisSpeeds supplier
+            this::drive, // Method that will drive the robot given ChassisSpeeds
+            new ReplanningConfig(), // Default path replanning config. See the API for the options here
+            this // Reference to this subsystem to set requirements
+        );
     }
 
     // Bad look on scope needs to be fixed
