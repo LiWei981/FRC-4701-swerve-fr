@@ -14,6 +14,9 @@ import edu.wpi.first.math.trajectory.TrajectoryConfig;
 import edu.wpi.first.math.trajectory.TrajectoryGenerator;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotConstants.DrivetrainConstants;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
@@ -27,6 +30,7 @@ import frc.robot.subsystems.VisionSubsystem;
  * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
  * (including subsystems, commands, and button mappings) should be declared here.
  */
+
 public class RobotContainer {
 
     public static final double GAMEPAD_AXIS_THRESHOLD = 0.2;
@@ -37,6 +41,9 @@ public class RobotContainer {
 
     private Autonomous auto = null;
 
+    SmartDashboard.putData("Auto Chooser", this.chooser);
+    chooser.setDefaultOption("wait", new wait(15));
+
     private final DriveSubsystem driveSubsystem = new DriveSubsystem();
     private final VisionSubsystem visionSubsystem = new VisionSubsystem();
     private final ElbowSubsystem elbowSubsystem = new ElbowSubsystem();
@@ -44,7 +51,7 @@ public class RobotContainer {
     private final GripperSubsystem gripperSubsystem = new GripperSubsystem();
 
     private final Field2d field = new Field2d(); // a representation of the field
-
+    private SendableChooser<Command> chooser = new SendableChooser<>();
     // The driver's controller
     // CommandXboxController driverGamepad = new
     // CommandXboxController(Ports.USB.GAMEPAD);
@@ -104,4 +111,5 @@ public class RobotContainer {
     public VisionSubsystem getVisionSubsystem() {
         return visionSubsystem;
     }
+
 }
