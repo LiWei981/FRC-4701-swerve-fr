@@ -77,7 +77,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousInit() {
         m_autonomousCommand = m_commandFactory.getAutoCommand();
-
+        
         /*
          * String autoSelected = SmartDashboard.getString("Auto Selector",
          * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
@@ -95,6 +95,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousPeriodic() {
         updateToSmartDash();
+
     }
 
     @Override
@@ -102,9 +103,9 @@ public class Robot extends TimedRobot {
         // m_commandFactory.gyroResetCommand().schedule();
         // m_commandFactory.homeLimbCommand().schedule();
 
-        if (m_autonomousCommand != null) {
-            m_autonomousCommand.cancel();
-        }
+        //if (m_autonomousCommand != null) {
+        //    m_autonomousCommand.cancel();
+        //}
     }
 
     /** This function is called periodically during operator control. */

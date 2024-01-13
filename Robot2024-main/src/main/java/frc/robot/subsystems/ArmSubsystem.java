@@ -18,7 +18,8 @@ import frc.robot.controllers.SparkMaxPositionController;
  *
  * @author dcowden
  */
-public class ArmSubsystem extends EntechSubsystem {
+
+ public class ArmSubsystem extends EntechSubsystem {
 
     private static final double NUDGE_COUNT = 0.05;
     private CANSparkMax telescopeMotor;
@@ -46,7 +47,9 @@ public class ArmSubsystem extends EntechSubsystem {
     public ArmSubsystem(CANSparkMax motor, SparkMaxPositionController controller) {
         this.enabled = true;
         this.telescopeMotor = motor;
-        this.positionController = controller;
+        //this.positionController = controller;
+        //temporary fix
+        //this.positionController = ;
 
     }
 
@@ -198,5 +201,5 @@ public class ArmSubsystem extends EntechSubsystem {
 
     public void forgetHome() {
         positionController.forgetHome();
-    }
+    } 
 }
